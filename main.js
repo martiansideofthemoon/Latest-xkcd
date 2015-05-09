@@ -6,10 +6,10 @@ fileref.setAttribute("src", "https://dynamic.xkcd.com/api-0/jsonp/comic/"+num+"?
 
 function loadRandom(){
 	var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-	var firstDate = new Date(2015,04,2);
-	var secondDate = new Date();
+	var firstDate = new Date(2015,04,9); //Today, 1522 comics exist
+	var secondDate = new Date(); //The future today
 	var diffDays = Math.floor(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
-	numComics=1522+parseInt((diffDays+5)/7)+parseInt((diffDays+3)/7)+parseInt((diffDays+1)/7)
+	numComics=1522+parseInt((diffDays+5)/7)+parseInt((diffDays+3)/7)+parseInt((diffDays+1)/7) //Monday,Wednesday, Friday
     num = Math.floor(Math.random()*parseInt(numComics+1))
     window.open( "xkcd.htm?"+num,"_self")
 } 
